@@ -109,7 +109,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             for button, count in clicks:
                 stats_text += f"- {button}: {count}/n"
 
-            await query.edit_message_text(stats_text)
+            await context.bot.send_message(chat_id=user_id, text=stats_text)
         else:
             await query.edit_message_text("You are not authorized to view this panel.")
 
