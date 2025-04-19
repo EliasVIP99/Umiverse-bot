@@ -131,8 +131,9 @@ if __name__ == "__main__":
     application.add_error_handler(error_handler)
 
     @app.route("/")
-    def home():
+def home():
     return "Bot is running!"
+
 
     application.run_polling()
 
