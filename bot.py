@@ -6,8 +6,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Callb
 from flask import Flask
 
 # إعدادات البوت
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-APP_URL = "https://your-app-name.onrender.com"
+BOT_TOKEN = "7691837029:AAEnuEemUNJWI5sTISgeL1CwxR5ahw6MU4A"
+APP_URL = "https://umiverse.io"
 PORT = 8443
 
 # إعداد قاعدة البيانات
