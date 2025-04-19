@@ -42,7 +42,3 @@ if __name__ == "__main__":
     application.add_handler(CommandHandler("start", start))
 
     application.run_polling()
-        port=PORT,
-        url_path=BOT_TOKEN,
-        webhook_url=f"{APP_URL}/{BOT_TOKEN}"
-    )
