@@ -97,19 +97,14 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if user_id in ADMINS:
             total, today, weekly, clicks = get_stats()
             stats_text = (
-                f"👥 Total Users: {total}"
-"
-                f"🆕 Joined Today: {today}"
-"
-                f"📅 Joined This Week: {weekly}"
-
-"
-                "📊 Button Clicks:
-"
+                            stats_text = (
+                f"👥 Total Users: {total}\n"
+                f"🆕 Joined Today: {today}\n"
+                f"📅 Joined This Week: {weekly}\n"
+                "📊 Button Clicks:\n"
             )
             for button, count in clicks:
-                stats_text += f"- {button}: {count}
-"
+                stats_text += f"- {button}: {count}\n"
             await query.edit_message_text(stats_text)
         else:
             await query.edit_message_text("You are not authorized to view this panel.")
@@ -126,5 +121,4 @@ if __name__ == "__main__":
     application.add_handler(CallbackQueryHandler(button_handler))
     application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
 
-    app.route("/")(lambda: "Bot is running!")
     application.run_polling()
