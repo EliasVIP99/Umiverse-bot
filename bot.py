@@ -74,14 +74,14 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_photo(
         photo="https://www2.0zz0.com/2025/04/19/00/352061437.jpg",
         caption=(
-            "*Welcome to Umiverse!*
+            """*Welcome to Umiverse!*
 
 "
             "A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s. "
             "💥🗡️
 
 "
-            "Choose an option below to explore more:"
+            "Choose an option below to explore more:"""
         ),
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup(buttons)
