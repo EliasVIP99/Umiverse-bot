@@ -90,25 +90,26 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # كولباك زر الأدمن
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
-    user_id = query.from_user.id
-    await query.answer()
+            elif query.data == "admin":
+            if user_id in ADMINS:
+                total = get_total_users()
+                today = get_today_users()
+                weekly = get_weekly_users()
+                clicks = get_button_clicks()
 
-    if query.data == "admin":
-        if user_id in ADMINS:
-            total, today, weekly, clicks = get_stats()
-                            stats_text = (
-                f"👥 Total Users: {total}\n"
-                f"🆕 Joined Today: {today}\n"
-                f"📅 Joined This Week: {weekly}\n"
-                "📊 Button Clicks:\n"
-            )
-            for button, count in clicks:
-                stats_text += f"- {button}: {count}\n"
-            await query.edit_message_text(stats_text)
-        else:
-            await query.edit_message_text("You are not authorized to view this panel.")
+                stats_text = (
+                    f"👥 Total Users: {total}\n"
+                    f"🆕 Joined Today: {today}\n"
+                    f"📅 Joined This Week: {weekly}\n"
+                    "📊 Button Clicks:\n"
+                )
+                for button, count in clicks:
+                    stats_text += f"- {button}: {count}\n"
+                await query.edit_message_text(stats_text)
+            else:
+                await query.edit_message_text("You are not authorized to view this panel.")
 
-# تراك زر يتم الضغط عليه
+# تتبع زر يتم الضغط عليه
 async def button_click_tracker(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if update.callback_query:
         record_click(update.callback_query.data)
@@ -120,4 +121,5 @@ if __name__ == "__main__":
     application.add_handler(CallbackQueryHandler(button_handler))
     application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
 
+    app.route("/")(lambda: "Bot is running!")
     application.run_polling()
