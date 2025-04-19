@@ -2,6 +2,7 @@ from telegram import WebAppInfo
 import logging
 import sqlite3
 import os
+import threading
 from datetime import datetime, date
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, CallbackQueryHandler
@@ -134,14 +135,13 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"Error occurred: {context.error}")
 
 if __name__ == "__main__":
-
-    run_flask()
+    flask_thread = threading.Thread(target=run_flask)
+    flask_thread.start()
 
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(button_handler))
-    application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
+    application.add_handler(CallbackQueryHandler(button_click_tracker))
     application.add_error_handler(error_handler)
-
     application.run_polling()
 
