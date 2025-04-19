@@ -42,7 +42,7 @@ if __name__ == "__main__":
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
 
-    application.run_webhook(
+    application.run_polling()
         listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
