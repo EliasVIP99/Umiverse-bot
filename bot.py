@@ -50,12 +50,13 @@ def record_click(button):
 
 # دالة حساب عدد المستخدمين الجدد
 def get_stats():
+    today = date.today().isoformat()  # هذا السطر مهم لتحديد تاريخ اليوم الحالي
     total_users = cursor.execute("SELECT COUNT(*) FROM users").fetchone()[0]
-    today = date.today().isoformat()
     today_users = cursor.execute("SELECT COUNT(*) FROM users WHERE join_date = ?", (today,)).fetchone()[0]
     weekly_users = cursor.execute("SELECT COUNT(*) FROM users WHERE join_date >= date('now', '-7 days')").fetchone()[0]
     clicks = cursor.execute("SELECT button, clicks FROM stats").fetchall()
     return total_users, today_users, weekly_users, clicks
+
 
 # رسالة الترحيب
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
