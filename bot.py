@@ -91,6 +91,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
             elif query.data == "admin":
+                    elif query.data == "admin":
             if user_id in ADMINS:
                 total = get_total_users()
                 today = get_today_users()
