@@ -119,6 +119,9 @@ async def button_click_tracker(update: Update, context: ContextTypes.DEFAULT_TYP
         record_click(update.callback_query.data)
 
 # نقطة البداية
+async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(f"Error occurred: {context.error}")
+
 if __name__ == "__main__":
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
