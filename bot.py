@@ -1,4 +1,5 @@
 from telegram import WebAppInfo
+import os
 import logging
 import sqlite3
 from datetime import datetime, date
