@@ -11,6 +11,15 @@ BOT_TOKEN = "7691837029:AAEnuEemUNJWI5sTISgeL1CwxR5ahw6MU4A"
 APP_URL = "https://umiverse.io"
 PORT = 8443
 
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "Bot is running!"
+
+def run_flask():
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+
 # إعداد قاعدة البيانات
 conn = sqlite3.connect("users.db", check_same_thread=False)
 cursor = conn.cursor()
@@ -124,16 +133,14 @@ async def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(f"Error occurred: {context.error}")
 
 if __name__ == "__main__":
+
+    run_flask()
+
     application = ApplicationBuilder().token(BOT_TOKEN).build()
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(button_handler))
     application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
     application.add_error_handler(error_handler)
-
-@app.route("/")
-def home():
-    return "Bot is running!"
-
 
     application.run_polling()
 
