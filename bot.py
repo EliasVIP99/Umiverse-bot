@@ -74,10 +74,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_photo(
         photo="https://www2.0zz0.com/2025/04/19/00/352061437.jpg",
         caption=(
-            "*Welcome to Umiverse!*
+            """*Welcome to Umiverse!*
 
 "
-            "A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s. 💥🗡️
+            "A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s. 💥🗡️"""
 
 "
             "Choose an option below to explore more:"
@@ -96,11 +96,11 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if user_id in ADMINS:
             total, today, weekly, clicks = get_stats()
             stats_text = (
-                f"👥 Total Users: {total}
+                f"👥 Total Users: {total}"
 "
-                f"🆕 Joined Today: {today}
+                f"🆕 Joined Today: {today}"
 "
-                f"📅 Joined This Week: {weekly}
+                f"📅 Joined This Week: {weekly}"
 "
                 "📊 Button Clicks:
 "
