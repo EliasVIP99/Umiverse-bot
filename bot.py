@@ -130,6 +130,9 @@ if __name__ == "__main__":
     application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
     application.add_error_handler(error_handler)
 
-    app.route("/")(lambda: "Bot is running!")
+    @app.route("/")
+def home():
+    return "Bot is running!"
+
     application.run_polling()
 
