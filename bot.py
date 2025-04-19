@@ -78,10 +78,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             """*Welcome to Umiverse!*
 
 
-            "*A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s*. 💥🗡️
+"*A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s*. 💥🗡️
 
 
-            "Choose an option below to explore more:"""
+"Choose an option below to explore more:"""
         ),
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup(buttons)
