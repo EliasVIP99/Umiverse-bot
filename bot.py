@@ -106,7 +106,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 "
             )
             for button, count in clicks:
-                stats_text += f"- {button}: {count}
+                stats_text += f"- {button}: {count}/n"
 "
             await query.edit_message_text(stats_text)
         else:
