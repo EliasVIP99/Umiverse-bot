@@ -1,4 +1,3 @@
-
 import os
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
@@ -43,7 +42,6 @@ if __name__ == "__main__":
     application.add_handler(CommandHandler("start", start))
 
     application.run_polling()
-        listen="0.0.0.0",
         port=PORT,
         url_path=BOT_TOKEN,
         webhook_url=f"{APP_URL}/{BOT_TOKEN}"
