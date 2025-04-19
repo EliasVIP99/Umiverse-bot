@@ -62,7 +62,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     save_user(user_id)
 
     buttons = [
-        [InlineKeyboardButton("📱 Launch App", url="https://umiverse-dapp.vercel.app/")],
+        [InlineKeyboardButton("📱 Launch App", web_app=WebAppInfo(url="https://umiverse.io"))],
         [InlineKeyboardButton("✈️ Join Telegram Chat", url="https://t.me/UMIVERSE_Official")],
         [InlineKeyboardButton("📖 Whitepaper", url="https://umiverse.gitbook.io/docs")],
         [InlineKeyboardButton("❓ Support", url="https://t.me/UMIVERSE_Official/50379")],
@@ -76,10 +76,10 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
         caption=(
             """*Welcome to Umiverse!*
 
-"
-            "A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s. 💥🗡️
 
-"
+            "*A robust Web3.0 Anime Gaming platform & LaunchPad for Otaku’s by Otaku’s*. 💥🗡️
+
+
             "Choose an option below to explore more:"""
         ),
         parse_mode="Markdown",
