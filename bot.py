@@ -25,7 +25,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     await update.message.reply_photo(
         photo="https://www2.0zz0.com/2025/04/19/00/352061437.jpg",
-        caption="*Welcome to Umiverse Bot!*
+        caption="*Welcome to Umiverse Bot!*"
 Click one of the buttons below:",
         parse_mode="Markdown",
         reply_markup=InlineKeyboardMarkup(buttons)
