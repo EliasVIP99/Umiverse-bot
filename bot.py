@@ -96,7 +96,6 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if query.data == "admin":
         if user_id in ADMINS:
             total, today, weekly, clicks = get_stats()
-            stats_text = (
                             stats_text = (
                 f"👥 Total Users: {total}\n"
                 f"🆕 Joined Today: {today}\n"
