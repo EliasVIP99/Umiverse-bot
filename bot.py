@@ -4,7 +4,7 @@ from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton, WebAppI
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 from flask import Flask, request
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
+BOT_TOKEN = "7691837029:AAEnuEemUNJWI5sTISgeL1CwxR5ahw6MU4A"
 PORT = int(os.environ.get("PORT", 8443))
 APP_URL = os.environ.get("APP_URL")
 
