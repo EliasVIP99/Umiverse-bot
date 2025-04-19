@@ -97,11 +97,11 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         if user_id in ADMINS:
             total, today, weekly, clicks = get_stats()
             stats_text = (
-                f"👥 Total Users: {total}
+                f"👥 Total Users: {total"}
 "
-                f"🆕 Joined Today: {today}
+                f"🆕 Joined Today: {today"}
 "
-                f"📅 Joined This Week: {weekly}
+                f"📅 Joined This Week: {weekly"}
 
 "
                 "📊 Button Clicks:
