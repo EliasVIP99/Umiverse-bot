@@ -97,13 +97,13 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
             total, today, weekly, clicks = get_stats()
             stats_text = (
                 f"👥 Total Users: {total}/n"
-"
+
                 f"🆕 Joined Today: {today}/n"
-"
+
                 f"📅 Joined This Week: {weekly}/n"
-"
+
                 "📊 Button Clicks:/n"
-"
+
             )
             for button, count in clicks:
                 stats_text += f"- {button}: {count}/n"
