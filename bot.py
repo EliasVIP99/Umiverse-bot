@@ -124,6 +124,12 @@ if __name__ == "__main__":
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CallbackQueryHandler(button_handler))
     application.add_handler(CallbackQueryHandler(button_click_tracker, block=False))
+from telegram.error import TelegramError
+
+async def error_handler(update, context):
+    print(f"Error occurred: {context.error}")
+
+application.add_error_handler(error_handler)
 
     app.route("/")(lambda: "Bot is running!")
     application.run_polling()
